@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Lesnictwo\UserBundle\LesnictwoUserBundle(),
             new Lesnictwo\MainBundle\LesnictwoMainBundle(),
             new Brown298\DataTablesBundle\Brown298DataTablesBundle(),
+            new Lesnictwo\MainBundle\LesnictwoMapaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

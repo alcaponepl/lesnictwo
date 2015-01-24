@@ -1,3 +1,7 @@
+lesnictwo_mapa:
+    resource: "@LesnictwoMapaBundle/Resources/config/routing.yml"
+    prefix:   /
+
 lesnictwo_main:
     resource: "@LesnictwoMainBundle/Resources/config/routing.yml"
     prefix:   /

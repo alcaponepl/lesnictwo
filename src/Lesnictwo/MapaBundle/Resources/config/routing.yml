@@ -1,0 +1,3 @@
+lesnictwo_mapa_homepage:
+    path:     /mapa
+    defaults: { _controller: LesnictwoMapaBundle:Mapa:index }
