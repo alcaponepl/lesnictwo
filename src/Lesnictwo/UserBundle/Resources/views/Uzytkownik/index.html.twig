@@ -1,40 +1,59 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Użytkownicy Systemu</h1>
+    <div class="tableUsers">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 col-md-offset-8">
+                    <a class="btn btn-primary" href="{{ path('users_new') }}">Dodaj użytkownika</a>
+                </div>
+            </div>
+        </div>    
+    <br/>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default col-md-8 col-md-offset-2">
+                <div class="panel-heading">Użytkownicy Systemu</div>
+                <br/>
+                <div class="panel-body">
+                    <div>
+                        {{ addDataTable(columns, {
+                            'bLengthChange': 0,
+                            'bInfo':         1,
+                            'bFilter':       1,
+                            'bPaginate':     1,
+                            'iDisplayLength': 5,
+                            
 
-    <a href="{{ path('users_new') }}">Dodaj użytkownika</a>
 
-    <div class="table-bordered">
-        {{ addDataTable(columns, {
-        'bLengthChange': 0,
-        'bInfo':         1,
-        'bFilter':       1,
-        'bPaginate':     1,
-        'iDisplayLength': 5,
-        
-         
-        
-        'customParams':     {
-                 'sScrollY': '',
-                 'sPaginationType': 'full_numbers',            
-                 'aLengthMenu': '[[5, 10, 15, -1], [5, 10, 15, "Wszystkie"]]',
-                 'oLanguage': '{
-                    "oPaginate": {
-                        "sFirst": "Pierwsza",
-                        "sLast": "Ostatnia",
-                        "sNext": "Następna",
-                        "sPrevious": "Poprzednia"
-                                  },
-                    "sEmptyTable": "Nie znaleziono żadnej pozycji",
-                    "sProcessing": "Przetwarzanie",
-                    "sSearch":"Szukaj:",
-                    "sInfoFiltered": "",
-                    "sInfo": "_START_ - _END_ z  _TOTAL_",
-                    "sLengthMenu": "Wyświetl:  _MENU_ "
-                              }',
-                            } 
-                                 }) 
-        }}
+
+                            'customParams':     {
+                                     'sScrollY': '',
+                                     'sPaginationType': 'full_numbers',            
+                                     'aLengthMenu': '[[5, 10, 15, -1], [5, 10, 15, "Wszystkie"]]',
+                                     'oLanguage': '{
+                                        "oPaginate": {
+                                            "sFirst": "Pierwsza",
+                                            "sLast": "Ostatnia",
+                                            "sNext": "Następna",
+                                            "sPrevious": "Poprzednia"
+                                                      },
+                                        "sEmptyTable": "Nie znaleziono żadnej pozycji",
+                                        "sProcessing": "Przetwarzanie",
+                                        "sSearch":"Szukaj:",
+                                        "sInfoFiltered": "",
+                                        "sInfo": "_START_ - _END_ z  _TOTAL_",
+                                        "sLengthMenu": "Wyświetl:  _MENU_ "
+                                                  }',
+                                                } 
+                                                     }) 
+                                            }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    {% endblock %}
+</div>
+</div>
+
+{% endblock %}

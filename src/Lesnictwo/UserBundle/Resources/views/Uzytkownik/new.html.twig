@@ -1,15 +1,34 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Dodaj nowego użytkownika</h1>
+    <br/>
+    <br/>
+    <br/>
+    <h3 class="col-md-offset-2">Dodaj nowego użytkownika</h3>
+    <div class="col-md-4 col-md-offset-4">  
+        {{ form_start(form) }}
+            {{ form_errors(form) }}
 
-    {{ form(form) }}
+            {{ form_row(form.imie) }}
+            {{ form_row(form.nazwisko) }}
+            {{ form_row(form.login) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.haslo) }}
+            {{ form_row(form.lesnictwo) }}
+            {{ form_row(form.rodzaj) }}                      
+            
+            <p></p>
+            <div class="row">
+                <div class="col-md-3 col-md-offset-2">
+                    {{ form_row(form.submit, { 'label': 'Zapisz','attr': {'class': 'btn btn-primary'} }) }}
+                </div>
+                <div class="col-md-6">
+                    <a class="btn btn-default" href="{{ path('users') }}">Anuluj</a>
+                </div>            
+            </div>
+                <br/>
+        {{ form_end(form) }}
+        
+    </div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('users') }}">
-            Anuluj
-        </a>
-    </li>
-</ul>
 {% endblock %}

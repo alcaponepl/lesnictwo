@@ -15,22 +15,35 @@ class UzytkownikType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('imie','text', array( 'label'=>'Imię' ))
-            ->add('nazwisko','text', array( 'label'=>'Nazwisko' ))
-            ->add('login','text', array( 'label'=>'Login' ))
-            ->add('email','text', array( 'label'=>'Email' ))
-            ->add('haslo','text', array( 'label'=>'Hasło' ))
+            ->add('imie','text', array( 
+                'label'=>'Imię',
+                'attr'=> array('class'=>'form-control'), ))
+            ->add('nazwisko','text', array( 
+                'label'=>'Nazwisko',
+                'attr'=> array('class'=>'form-control')))
+            ->add('login','text', array( 
+                'label'=>'Login',
+                'attr'=> array('class'=>'form-control'),))
+            ->add('email','text', array( 
+                'label'=>'Email',
+                'attr'=> array('class'=>'form-control'),))
+            ->add('haslo','text', array( 
+                'label'=>'Hasło',
+                'attr'=> array('class'=>'form-control'),    ))
            // ->add('rodzaj')
-            ->add('lesnictwo' ,'text', array( 'label'=>'Przypisz ID Leśnictwa' ))
-            ->add('rodzaj', 'choice', array(  'label'=>'Uprawnienia',
-                                                'choices'   => array(
-                                                                    'admin' => 'Administrator',
-                                                                    'user' => 'Użytkownik (standardowy)',
-     
-                                                                    ),
-                                                                    'expanded' => true,
-                                                                    'multiple' => false,
-                                                                    ))
+            ->add('lesnictwo' ,'text', array( 
+                'label'=>'Przypisz ID Leśnictwa',
+                 'attr'=> array('class'=>'form-control'),))
+            ->add('rodzaj', 'choice', array(  
+                'label'=>'Uprawnienia',
+                'choices'   => array(
+                                    'admin' => 'Administrator',
+                                    'user' => 'Użytkownik (standardowy)',
+
+                                    ),
+                                    'expanded' => true,
+                                    'multiple' => false,
+                                    ))
         ;
     }
     
