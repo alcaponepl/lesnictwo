@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Lesnictwo\UserBundle\LesnictwoUserBundle(),
             new Lesnictwo\MainBundle\LesnictwoMainBundle(),
+            new Brown298\DataTablesBundle\Brown298DataTablesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

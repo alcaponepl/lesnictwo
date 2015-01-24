@@ -1,0 +1,19 @@
+# src/Praktyka/CVmanagerBundle/Resources/config/validation.yml
+
+
+
+Lesnictwo\UserBundle\Entity\Uzytkownik:
+     properties:
+         imie:
+             - NotBlank: ~
+             - Regex:
+                pattern: "/\d/"
+                match:   false
+                message: 'Imie ma się składać tylko z liter'
+                       
+         nazwisko:
+             - NotBlank: ~
+             - Regex:
+                pattern: "/\d/"
+                match:   false
+                message: 'Nazwisko ma się składać tylko z liter'

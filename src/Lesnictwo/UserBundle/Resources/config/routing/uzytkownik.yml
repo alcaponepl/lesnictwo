@@ -1,0 +1,30 @@
+users:
+    path:     /
+    defaults: { _controller: "LesnictwoUserBundle:Uzytkownik:index" }
+
+users_show:
+    path:     /{uzytkownikId}/show
+    defaults: { _controller: "LesnictwoUserBundle:Uzytkownik:show" }
+
+users_new:
+    path:     /new
+    defaults: { _controller: "LesnictwoUserBundle:Uzytkownik:new" }
+
+users_create:
+    path:     /create
+    defaults: { _controller: "LesnictwoUserBundle:Uzytkownik:create" }
+    requirements: { _method: post }
+
+users_edit:
+    path:     /{uzytkownikId}/edit
+    defaults: { _controller: "LesnictwoUserBundle:Uzytkownik:edit" }
+
+users_update:
+    path:     /{uzytkownikId}/update
+    defaults: { _controller: "LesnictwoUserBundle:Uzytkownik:update" }
+    requirements: { _method: post|put }
+
+users_delete:
+    path:     /{uzytkownikId}/delete
+    defaults: { _controller: "LesnictwoUserBundle:Uzytkownik:delete" }
+    requirements: { _method: post|delete }
