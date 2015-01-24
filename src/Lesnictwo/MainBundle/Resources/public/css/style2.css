@@ -1,0 +1,86 @@
+body { 
+    padding-top: 50px; 
+    font-family: 'Segoe UI';
+}
+.log-out-btn{
+    margin-top: 8px;
+}
+.navbar-default{
+    background-color: #018263;
+    border: none;
+}
+.navbar{
+    font-weight: bold;
+}
+
+.navbar-default .navbar-brand{
+    color: #000;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus{
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a{
+    color: #fff;
+    text-align: center;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus{
+    color: #fff;
+    background-color: #d35400;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus{
+    color: #fff;
+    background-color: #018263;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus{
+    color: #fff;
+    background-color: #ffcf0e;
+}
+
+.navbar-default .navbar-nav > li > .dropdown-menu {
+    color: #fff;
+    font-weight: bold;
+    background-color: #ffcf0e;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > a {
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus{
+    color: #ffcf0e;
+    background-color: #fff;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a,
+.navbar-default .navbar-nav .open .dropdown-menu {
+    font-weight: bold;
+    color:#fff;
+    text-align: center;
+}
+
+html,body{
+    height:100%;
+}
+
+.logo-jagielek{
+    margin-top: -305px;
+    margin-left: 70px;
+}
+.sectionContent{
+    margin-top: 50px;
+}
+#section2{
+    margin-top: -120px;
+}
+

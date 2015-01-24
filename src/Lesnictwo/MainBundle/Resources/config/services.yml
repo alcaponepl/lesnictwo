@@ -1,0 +1,4 @@
+services:
+#    lesnictwo_main.example:
+#        class: Lesnictwo\MainBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

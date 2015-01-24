@@ -1,0 +1,3 @@
+lesnictwo_main_homepage:
+    path:     /
+    defaults: { _controller: LesnictwoMainBundle:Menu:index }
