@@ -1,3 +1,5 @@
-app:
-    resource: @AppBundle/Controller/
-    type:     annotation
+lesnictwo_user:
+    resource: "@LesnictwoUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
