@@ -1,8 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
-        "This file is @generated automatically"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
     "hash": "08d08347b60e559702cdf0ba04768e74",
     "packages": [
@@ -48,7 +47,7 @@
                 "Symfony2",
                 "datatables"
             ],
-            "time": "2014-12-12 16:36:08"
+            "time": "2014-12-12 15:36:08"
         },
         {
             "name": "datatables/datatables",
@@ -1732,15 +1731,17 @@
             "time": "2015-01-13 07:33:46"
         }
     ],
-    "aliases": [],
+    "aliases": [
+
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
         "brown298/data-tables-bundle": 20
     },
-    "prefer-stable": false,
-    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.3"
     },
-    "platform-dev": []
+    "platform-dev": [
+
+    ]
 }
