@@ -31,7 +31,13 @@ class UzytkownikType extends AbstractType
                 'label'=>'Hasło',
                 'attr'=> array('class'=>'form-control'),    ))
            // ->add('rodzaj')
-            ->add('lesnictwo' ,'text', array( 
+            ->add('lesnictwo' ,'choice', array(
+                'choices' => array('1' => 'Leśnictwo#1',
+                                   '2' => 'Leśnictwo#2',
+                                   '3' => 'Leśnictwo#3',
+                                   '4' => 'Leśnictwo#4',
+                                   '5' => 'Leśnictwo#5'
+                                   ),
                 'label'=>'Przypisz ID Leśnictwa',
                  'attr'=> array('class'=>'form-control'),))
             ->add('rodzaj', 'choice', array(  
