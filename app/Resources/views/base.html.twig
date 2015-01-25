@@ -30,36 +30,36 @@
                 </div>
                 <div class="collapse navbar-collapse navbar-right" id="navbar-collapsible">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">
-                                {% if is_granted("ROLE_USER") %}
-                                Zalogowano jako: {{ app.user.username }}
-                                {% endif %}
+                        {% if is_granted("ROLE_USER") %}
+                            <li><a href="#">
+                                    Zalogowano jako: {{ app.user.username }}                                    
                             </a></li>
-                            <li><a href="{{ path('fos_user_security_logout') }}"><button type="button" class="btn btn-default log-out-btn">Wyloguj</button></a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
+                            <li><a href="{{ path('fos_user_security_logout') }}"><button type="button" class="btn btn-default log-out-btn">Wyloguj</button></a></li>    
+                            {% endif %}
+                    </ul>
+                </div><!--/.nav-collapse -->
             </div>
-            <div id="svg-container">
-                <svg width='100%' height='100%' viewBox="0 0 100 20" preserveAspectRatio="none" style='background-color: white'>            
-                <path d="M 0,19 q 20,-20 100 -18 l 0,-2 l -100,0 z" stroke="#018263" stroke-width="0.5" fill="#018263" />            
-                </svg>
-            </div>
-            <!-- Logo Jagiełek -->
-            <a href="{{ path('lesnictwo_main_homepage') }}"><img class="logo-jagielek" src="{{ asset('bundles/lesnictwomain/images/logo.png') }}" alt="Logo Jagiełek" height="250" width="250"></a>
-            <!--/ Logo Jagiełek -->
-            <section id="section2">
-            {% block body %}{% endblock %}
-        </section>
+        </div>
+        <div id="svg-container">
+            <svg width='100%' height='100%' viewBox="0 0 100 20" preserveAspectRatio="none" style='background-color: white'>            
+            <path d="M 0,19 q 20,-20 100 -18 l 0,-2 l -100,0 z" stroke="#018263" stroke-width="0.5" fill="#018263" />            
+            </svg>
+        </div>
+        <!-- Logo Jagiełek -->
+        <a href="{{ path('lesnictwo_main_homepage') }}"><img class="logo-jagielek" src="{{ asset('bundles/lesnictwomain/images/logo.png') }}" alt="Logo Jagiełek" height="250" width="250"></a>
+        <!--/ Logo Jagiełek -->
+        <section id="section2">
+        {% block body %}{% endblock %}
+    </section>
 
-        <!-- Scripts -->
-        {% block javascripts %}
-            {% javascripts '@data_tables' %}
-            <script type="text/javascript" src="{{ asset_url }}"></script>
-            {% endjavascripts %}
-            <script src="{{ asset('bundles/lesnictwomain/js/bootstrap.js') }}"></script>
-        {% endblock %}
+    <!-- Scripts -->
+    {% block javascripts %}
+        {% javascripts '@data_tables' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        <script src="{{ asset('bundles/lesnictwomain/js/bootstrap.js') }}"></script>
+    {% endblock %}
 
-        <!-- /Scripts -->
-    </body>
+    <!-- /Scripts -->
+</body>
 </html>
