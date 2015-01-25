@@ -225,7 +225,7 @@ class UzytkownikController extends Controller {
         ;
     }
 
-    public function deletetUserAction($uzytkownikId) {
+    public function deleteUserAction($uzytkownikId) {
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository('LesnictwoUserBundle:Uzytkownik')->find($uzytkownikId);
 
