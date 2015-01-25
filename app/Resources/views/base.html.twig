@@ -8,7 +8,8 @@
         {% javascripts '@data_tables' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
-
+        {% block maps %}
+        {% endblock %}
         <!-- Stylesheets -->
         {% block stylesheets %}
             <link rel="stylesheet" type="text/css" href="{{ asset('bundles/lesnictwomain/css/bootstrap.css') }}">
