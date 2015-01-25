@@ -45,10 +45,10 @@
                             '<label for="pDesc"><span>Opis :</span><textarea name="pDesc" class="save-desc" placeholder="Opis" maxlength="150"></textarea></label>' +
                             '<label for="pName"><span>ID</span><input type="text" name="pName" class="save-name" placeholder="Identyfikator drzewa" maxlength="40" /></label>' +
                             '</form>' +
-                            '</div></p><button name="save-marker" class="save-marker">Zatwierdz</button>';
+                            '</div></p><button name="save-marker" class="save-marker">Zatwierdź</button>';
 
                     //Drop a new Marker with our Edit Form
-                    create_marker(event.latLng, 'Dodaj drzewo', EditForm, true, true, true, "images/tree.png");
+                    create_marker(event.latLng, 'Dodaj drzewo', EditForm, true, true, true, "{{ asset('bundles/lesnictwomapa/images/tree.png') }}");
                 });
 
             }
@@ -72,7 +72,7 @@
                         '<div class="marker-inner-win"><span class="info-content">' +
                         '<h1 class="marker-heading">' + MapTitle + '</h1>' +
                         MapDesc +
-                        '</span><button name="remove-marker" class="remove-marker" title="Remove Marker">Usun</button>' +
+                        '</span><button name="remove-marker" class="remove-marker" title="Remove Marker">Usuń</button>' +
                         '</div></div>');
 
 
@@ -197,6 +197,8 @@
     </style>
 {% endblock %}
 {% block body %}
+    <br/>
+    <br/>
     <h1 class="heading">Drzewa do wycinki</h1>
     <div align="center">Kliknij Prawy przycisk by dodać drzewo</div>
     <div id="google_map"></div>
