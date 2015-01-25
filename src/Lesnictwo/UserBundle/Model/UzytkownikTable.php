@@ -15,8 +15,8 @@ class UzytkownikTable extends AbstractQueryBuilderDataTable implements QueryBuil
         'uzytkownik.imie' => 'Imię',
         'uzytkownik.nazwisko' => 'Nazwisko',
         'uzytkownik.login' => 'Login',
-        'edit'=>'    ',
-        'delete'=>'    ',
+        'edit'=>'',
+        'delete'=>'',
         
     );
 
@@ -33,7 +33,7 @@ class UzytkownikTable extends AbstractQueryBuilderDataTable implements QueryBuil
             $results = array();
 
             foreach ($data as $row) {
-                $results[$count][] = $row['uzytkownikId'];
+                $results[$count][] = $renderer->render('LesnictwoUserBundle:Formatters:showFormatter.html.twig', array('uzytkownikId' => $row['uzytkownikId']));
                 $results[$count][] = $row['imie'];
                 $results[$count][] = $row['nazwisko'];
                 $results[$count][] = $row['login'];

@@ -1,19 +1,71 @@
-# src/Praktyka/CVmanagerBundle/Resources/config/validation.yml
-
 
 
 Lesnictwo\UserBundle\Entity\Uzytkownik:
+     constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: {fields: email, message: 'Taki adres email już istnieje'}
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: {fields: login, message: 'Ten login jest już zajęty'}
+        
      properties:
          imie:
-             - NotBlank: ~
+             - NotBlank:
+                message: 'Podaj imię użytkownika'
              - Regex:
                 pattern: "/\d/"
                 match:   false
                 message: 'Imie ma się składać tylko z liter'
+             - Length:
+                min: 2
+                max: 13
+                minMessage: "Imię musi się składać z przynajmniej {{ limit }} znaków"
+                maxMessage: "Imię musi się składać z conajwyżej {{ limit }} znaków"
                        
          nazwisko:
-             - NotBlank: ~
+             - NotBlank:
+                message: 'Podaj nazwisko użytkownika'
              - Regex:
                 pattern: "/\d/"
                 match:   false
                 message: 'Nazwisko ma się składać tylko z liter'
+             - Length:
+                min: 2
+                max: 20
+                minMessage: "Nazwisko musi się składać z przynajmniej {{ limit }} znaków"
+                maxMessage: "Nazwisko musi się składać z conajwyżej {{ limit }} znaków"
+                
+         email:
+             - NotBlank:
+                 message: 'Podaj adres email użytkownika'
+             - Email:
+                message: 'Adres email ma niepoprawny format'
+                checkMX: true
+                
+         rodzaj:
+             - NotBlank:
+                message: 'Określ poziom uprawnień'
+             
+         lesnictwo:
+             - NotBlank:
+                message: 'Przypisz użykownika do leśnictwa'
+         
+         login:
+              - NotBlank:
+                  message: 'Podaj unikalny login'
+              - Length:
+                min: 5
+                max: 15
+                minMessage: "Login musi się składać z przynajmniej {{ limit }} znaków"
+                maxMessage: "Login musi się składać z conajwyżej {{ limit }} znaków"     
+              
+         haslo:
+              - NotBlank:
+                  message: 'Podaj hasło'
+              - Length:
+                min: 6
+                max: 20
+                minMessage: "Hasło musi się składać z przynajmniej {{ limit }} znaków"
+                maxMessage: "Hasło musi się składać z conajwyżej {{ limit }} znaków"
+             
+              
+             
+            
+            

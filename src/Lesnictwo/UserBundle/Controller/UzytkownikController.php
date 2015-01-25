@@ -174,7 +174,9 @@ class UzytkownikController extends Controller {
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('users_edit', array('uzytkownikId' => $uzytkownikId)));
+            //return $this->redirect($this->generateUrl('users_edit', array('uzytkownikId' => $uzytkownikId)));
+            // żeby po aktualizacji szło na ekran z listą userów
+            return $this->redirect($this->generateUrl('users'));
         }
 
         return $this->render('LesnictwoUserBundle:Uzytkownik:edit.html.twig', array(
@@ -218,12 +220,12 @@ class UzytkownikController extends Controller {
         return $this->createFormBuilder()
                         ->setAction($this->generateUrl('users_delete', array('uzytkownikId' => $uzytkownikId)))
                         ->setMethod('DELETE')
-                        ->add('submit', 'submit', array('label' => 'Usuń'))
+                        //->add('submit', 'submit', array('label' => 'Usuń'))
                         ->getForm()
         ;
     }
 
-    public function deleetUserAction($uzytkownikId) {
+    public function deletetUserAction($uzytkownikId) {
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository('LesnictwoUserBundle:Uzytkownik')->find($uzytkownikId);
 
@@ -235,8 +237,6 @@ class UzytkownikController extends Controller {
 
         $em->remove($user);
         $em->flush();
-
-
 
         return $this->redirect($this->generateUrl('users'));
     }

@@ -22,7 +22,7 @@ users_edit:
 users_update:
     path:     /{uzytkownikId}/update
     defaults: { _controller: "LesnictwoUserBundle:Uzytkownik:update" }
-    requirements: { _method: post|put }
+    requirements: { _method: get|put }
 
 users_delete:
     path:     /{uzytkownikId}/delete
@@ -31,5 +31,5 @@ users_delete:
     
 users_delete_two:
     path:     /{uzytkownikId}/deleteUser
-    defaults: { _controller: "LesnictwoUserBundle:Uzytkownik:delete" }
+    defaults: { _controller: "LesnictwoUserBundle:Uzytkownik:deleetUser" }
     requirements: { _method: get|delete }
