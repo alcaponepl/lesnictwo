@@ -27,10 +27,10 @@ Lesnictwo\UserBundle\Entity\Uzytkownik:
                 match:   false
                 message: 'Nazwisko ma się składać tylko z liter'
              - Length:
-                min: 2
-                max: 20
-                minMessage: "Nazwisko musi się składać z przynajmniej {{ limit }} znaków"
-                maxMessage: "Nazwisko musi się składać z conajwyżej {{ limit }} znaków"
+                 min: 2
+                 max: 20
+                 minMessage: "Nazwisko musi się składać z przynajmniej {{ limit }} znaków"
+                 maxMessage: "Nazwisko musi się składać z conajwyżej {{ limit }} znaków"
                 
          email:
              - NotBlank:
@@ -51,19 +51,19 @@ Lesnictwo\UserBundle\Entity\Uzytkownik:
               - NotBlank:
                   message: 'Podaj unikalny login'
               - Length:
-                min: 5
-                max: 15
-                minMessage: "Login musi się składać z przynajmniej {{ limit }} znaków"
-                maxMessage: "Login musi się składać z conajwyżej {{ limit }} znaków"     
+                  min: 5
+                  max: 15
+                  minMessage: "Login musi się składać z przynajmniej {{ limit }} znaków"
+                  maxMessage: "Login musi się składać z conajwyżej {{ limit }} znaków"     
               
          haslo:
               - NotBlank:
                   message: 'Podaj hasło'
               - Length:
-                min: 6
-                max: 20
-                minMessage: "Hasło musi się składać z przynajmniej {{ limit }} znaków"
-                maxMessage: "Hasło musi się składać z conajwyżej {{ limit }} znaków"
+                 min: 6
+                 max: 20
+                 minMessage: "Hasło musi się składać z przynajmniej {{ limit }} znaków"
+                 maxMessage: "Hasło musi się składać z conajwyżej {{ limit }} znaków"
              
               
              
