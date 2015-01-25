@@ -28,3 +28,8 @@ users_delete:
     path:     /{uzytkownikId}/delete
     defaults: { _controller: "LesnictwoUserBundle:Uzytkownik:delete" }
     requirements: { _method: post|delete }
+    
+users_delete_two:
+    path:     /{uzytkownikId}/deleteUser
+    defaults: { _controller: "LesnictwoUserBundle:Uzytkownik:delete" }
+    requirements: { _method: get|delete }

@@ -1,56 +1,63 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Uzytkownik</h1>
+    <br/>
+    <br/>
+    <br/>
+    <h3 class="col-md-offset-2">Użytkownik</h3>
+    <div class="col-md-4 col-md-offset-4">
+        <table class="record_properties table">
+            <tbody>
+                <tr>
+                    <th>Uzytkownikid</th>
+                    <td>{{ entity.uzytkownikId }}</td>
+                </tr>
+                <tr>
+                    <th>Login</th>
+                    <td>{{ entity.login }}</td>
+                </tr>
+                <tr>
+                    <th>Hasło</th>
+                    <td>{{ entity.haslo }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ entity.email }}</td>
+                </tr>
+                <tr>
+                    <th>Rodzaj</th>
+                    <td>{{ entity.rodzaj }}</td>
+                </tr>
+                <tr>
+                    <th>Imię</th>
+                    <td>{{ entity.imie }}</td>
+                </tr>
+                <tr>
+                    <th>Nazwisko</th>
+                    <td>{{ entity.nazwisko }}</td>
+                </tr>
+                <tr>
+                    <th>Leśnictwo</th>
+                    <td>{{ entity.lesnictwo }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-md-3 col-md-offset-2">
+                <a class="btn btn-primary" href="{{ path('users') }}">
+                    Powrót
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-success" href="{{ path('users_edit', { 'uzytkownikId': entity.uzytkownikId }) }}">
+                    Edycja
+                </a>
+            </div>    
+            <div class="col-md-3">
+                {{ form(delete_form) }}
+            </div>  
+        </div>
+    </div>
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Uzytkownikid</th>
-                <td>{{ entity.uzytkownikId }}</td>
-            </tr>
-            <tr>
-                <th>Login</th>
-                <td>{{ entity.login }}</td>
-            </tr>
-            <tr>
-                <th>Hasło</th>
-                <td>{{ entity.haslo }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ entity.email }}</td>
-            </tr>
-            <tr>
-                <th>Rodzaj</th>
-                <td>{{ entity.rodzaj }}</td>
-            </tr>
-            <tr>
-                <th>Imię</th>
-                <td>{{ entity.imie }}</td>
-            </tr>
-            <tr>
-                <th>Nazwisko</th>
-                <td>{{ entity.nazwisko }}</td>
-            </tr>
-            <tr>
-                <th>Leśnictwo</th>
-                <td>{{ entity.lesnictwo }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('users') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('users_edit', { 'uzytkownikId': entity.uzytkownikId }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    
 {% endblock %}

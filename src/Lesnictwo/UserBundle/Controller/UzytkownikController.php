@@ -4,7 +4,6 @@ namespace Lesnictwo\UserBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Lesnictwo\UserBundle\Entity\Uzytkownik;
 use Lesnictwo\UserBundle\Form\UzytkownikType;
 use Lesnictwo\UserBundle\Model\UzytkownikTable;
@@ -13,18 +12,16 @@ use Lesnictwo\UserBundle\Model\UzytkownikTable;
  * Uzytkownik controller.
  *
  */
-class UzytkownikController extends Controller
-{
+class UzytkownikController extends Controller {
 
     /**
      * Lists all Uzytkownik entities.
      *
      */
-    public function indexAction()
-    {
+    public function indexAction() {
         $request = $this->getRequest();
         $em = $this->get('doctrine.orm.entity_manager');
-        
+
         // process the data table
         $dataTableA = new UzytkownikTable();
         $dataTableA->setEm($em);
@@ -36,15 +33,15 @@ class UzytkownikController extends Controller
         //$entities = $em->getRepository('LesnictwoUserBundle:Uzytkownik')->findAll();
 
         return $this->render('LesnictwoUserBundle:Uzytkownik:index.html.twig', array(
-            'columns' => $dataTableA->getColumns(),
+                    'columns' => $dataTableA->getColumns(),
         ));
     }
+
     /**
      * Creates a new Uzytkownik entity.
      *
      */
-    public function createAction(Request $request)
-    {
+    public function createAction(Request $request) {
         $entity = new Uzytkownik();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
@@ -58,8 +55,8 @@ class UzytkownikController extends Controller
         }
 
         return $this->render('LesnictwoUserBundle:Uzytkownik:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
+                    'entity' => $entity,
+                    'form' => $form->createView(),
         ));
     }
 
@@ -70,8 +67,7 @@ class UzytkownikController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Uzytkownik $entity)
-    {
+    private function createCreateForm(Uzytkownik $entity) {
         $form = $this->createForm(new UzytkownikType(), $entity, array(
             'action' => $this->generateUrl('users_create'),
             'method' => 'POST',
@@ -86,14 +82,13 @@ class UzytkownikController extends Controller
      * Displays a form to create a new Uzytkownik entity.
      *
      */
-    public function newAction()
-    {
+    public function newAction() {
         $entity = new Uzytkownik();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return $this->render('LesnictwoUserBundle:Uzytkownik:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
+                    'entity' => $entity,
+                    'form' => $form->createView(),
         ));
     }
 
@@ -101,8 +96,7 @@ class UzytkownikController extends Controller
      * Finds and displays a Uzytkownik entity.
      *
      */
-    public function showAction($uzytkownikId)
-    {
+    public function showAction($uzytkownikId) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('LesnictwoUserBundle:Uzytkownik')->find($uzytkownikId);
@@ -114,8 +108,8 @@ class UzytkownikController extends Controller
         $deleteForm = $this->createDeleteForm($uzytkownikId);
 
         return $this->render('LesnictwoUserBundle:Uzytkownik:show.html.twig', array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
+                    'entity' => $entity,
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -123,8 +117,7 @@ class UzytkownikController extends Controller
      * Displays a form to edit an existing Uzytkownik entity.
      *
      */
-    public function editAction($uzytkownikId)
-    {
+    public function editAction($uzytkownikId) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('LesnictwoUserBundle:Uzytkownik')->find($uzytkownikId);
@@ -137,21 +130,20 @@ class UzytkownikController extends Controller
         $deleteForm = $this->createDeleteForm($uzytkownikId);
 
         return $this->render('LesnictwoUserBundle:Uzytkownik:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+                    'entity' => $entity,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-    * Creates a form to edit a Uzytkownik entity.
-    *
-    * @param Uzytkownik $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Uzytkownik $entity)
-    {
+     * Creates a form to edit a Uzytkownik entity.
+     *
+     * @param Uzytkownik $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createEditForm(Uzytkownik $entity) {
         $form = $this->createForm(new UzytkownikType(), $entity, array(
             'action' => $this->generateUrl('users_update', array('uzytkownikId' => $entity->getUzytkownikId())),
             'method' => 'PUT',
@@ -161,12 +153,12 @@ class UzytkownikController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Uzytkownik entity.
      *
      */
-    public function updateAction(Request $request, $uzytkownikId)
-    {
+    public function updateAction(Request $request, $uzytkownikId) {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('LesnictwoUserBundle:Uzytkownik')->find($uzytkownikId);
@@ -186,17 +178,17 @@ class UzytkownikController extends Controller
         }
 
         return $this->render('LesnictwoUserBundle:Uzytkownik:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+                    'entity' => $entity,
+                    'edit_form' => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
         ));
     }
+
     /**
      * Deletes a Uzytkownik entity.
      *
      */
-    public function deleteAction(Request $request, $uzytkownikId)
-    {
+    public function deleteAction(Request $request, $uzytkownikId) {
         $form = $this->createDeleteForm($uzytkownikId);
         $form->handleRequest($request);
 
@@ -222,13 +214,31 @@ class UzytkownikController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm($uzytkownikId)
-    {
+    private function createDeleteForm($uzytkownikId) {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('users_delete', array('uzytkownikId' => $uzytkownikId)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Usuń'))
-            ->getForm()
+                        ->setAction($this->generateUrl('users_delete', array('uzytkownikId' => $uzytkownikId)))
+                        ->setMethod('DELETE')
+                        ->add('submit', 'submit', array('label' => 'Usuń'))
+                        ->getForm()
         ;
     }
+
+    public function deleetUserAction($uzytkownikId) {
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('LesnictwoUserBundle:Uzytkownik')->find($uzytkownikId);
+
+        if (!$user) {
+            throw $this->createNotFoundException(
+                    'No product found for id ' . $uzytkownikId
+            );
+        }
+
+        $em->remove($user);
+        $em->flush();
+
+
+
+        return $this->redirect($this->generateUrl('users'));
+    }
+
 }
